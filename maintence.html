@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Datta Able - Offline UI</title>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+        content="Datta Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords"
+        content="admin templates, bootstrap admin templates, bootstrap 4, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, datta able, datta able bootstrap admin template">
+    <meta name="author" content="Codedthemes" />
+
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/animation/css/animate.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="auth-wrapper offline">
+        <div class="text-center">
+            <h1 class="mb-4">EM CONSTRUÇÃO</h1>
+            <h5 class="text-muted mb-4">Este procedimento ainda se encontra em construção.</h5>
+            <form action="index.html">
+                <button class="btn btn-primary mb-4"><i class="feather icon-home"></i>Voltar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/horizontal-menu.js">
+    </script>
+    <script type="text/javascript">
+
+        //Collapse menu
+        (function () {
+            if ($('#layout-sidenav').hasClass('sidenav-horizontal') || window.layoutHelpers.isSmallScreen()) {
+                return;
+            }
+            try {
+                window.layoutHelpers.setCollapsed(
+                    localStorage.getItem('layoutCollapsed') === 'true',
+                    false
+                );
+            } catch (e) { }
+        })();
+        $(function () {
+            // Initialize sidenav
+            $('#layout-sidenav').each(function () {
+                new SideNav(this, {
+                    orientation: $(this).hasClass('sidenav-horizontal') ? 'horizontal' : 'vertical'
+                });
+            });
+
+            // Initialize sidenav togglers
+            $('body').on('click', '.layout-sidenav-toggle', function (e) {
+                e.preventDefault();
+                window.layoutHelpers.toggleCollapsed();
+                if (!window.layoutHelpers.isSmallScreen()) {
+                    try {
+                        localStorage.setItem('layoutCollapsed', String(window.layoutHelpers.isCollapsed()));
+                    } catch (e) { }
+                }
+            });
+        });
+        $(document).ready(function () {
+            $("#pcoded").pcodedmenu({
+                themelayout: 'horizontal',
+                MenuTrigger: 'hover',
+                SubMenuTrigger: 'hover',
+            });
+        });
+
+    </script>
+</body>
+
+</html>

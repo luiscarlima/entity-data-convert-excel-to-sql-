@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Main Header -->
+    <title>Conversao de Dados</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Conversao de Dados" />
+    <meta name="author" content="Luis Santos" />
+
+    <!-- Pre-Styles - Start -->
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- Fontawesome Icons -->
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.min.css">
+
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="assets/plugins/animation/css/animate.min.css">
+
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Pre-Styles - End -->
+
+    <!-- Pre-Scripts - Start -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"
+        integrity="sha512-r22gChDnGvBylk90+2e/ycr3RVrDi8DIOkIGNhJlKfuyQM4tIRAI062MaV8sfjQKYVGjOBaZBOA87z+IhZE9DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.js"
+        integrity="sha512-mxCAjvjp0jvMdGRIEvAHOCGL6BOucqWpTBXwchElsPKNw7BEegHviDHPnYrOrzgzBiw3GD/Q1ibpA5nlFPYDMw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Pre-Scripts - End -->
+</head>
+
+<body>
+
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+
+    <!-- [ navigation menu ] start -->
+    <nav class="pcoded-navbar menu-light icon-colored theme-horizontal">
+        <div class="navbar-wrapper">
+            <div class="navbar-brand header-logo">
+                <a href="index.html" class="b-brand">
+                    <div class="b-bg">
+                        <i class="feather icon-refresh-cw"></i>
+                    </div>
+                    <span class="b-title">Conversão de Dados - Mago4</span>
+                </a>
+                <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
+            </div>
+            <div class="navbar-content sidenav-horizontal" id="layout-sidenav">
+                <ul class="nav pcoded-inner-navbar sidenav-inner">
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Dados Principais</label>
+                    </li>
+                    <li data-username="Produtos" class="nav-item">
+                        <a href="index.html" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-box"></i></span><span class="pcoded-mtext">Produtos</span></a>
+                    </li>
+                    <li data-username="Clientes" class="nav-item">
+                        <a href="customers.html" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-users"></i></span><span class="pcoded-mtext">Clientes</span></a>
+                    </li>
+                    <li data-username="Fornecedores" class="nav-item">
+                        <a href="suppliers.html" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-shuffle"></i></span><span
+                                class="pcoded-mtext">Fornecedores</span></a>
+                    </li>
+                    <li data-username="Transportadoras" class="nav-item">
+                        <a href="carriers.html" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-package"></i></span><span
+                                class="pcoded-mtext">Transportadoras</span></a>
+                    </li>
+                    <li data-username="Contas a Receber" class="nav-item active">
+                        <a href="maintence.html" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-trending-up"></i></span><span class="pcoded-mtext">Contas a
+                                Receber</span></a>
+                    </li>
+                    <li data-username="Contas a Pagar" class="nav-item">
+                        <a href="maintence.html" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-trending-down"></i></span><span class="pcoded-mtext">Contas a
+                                Pagar</span></a>
+                    </li>
+                    <li data-username="Regras de Impostos" class="nav-item">
+                        <a href="maintence.html" class="nav-link "><span class="pcoded-micon"><i
+                                    class="feather icon-bar-chart-2"></i></span><span class="pcoded-mtext">Regras de
+                                Impostos</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- [ navigation menu ] end -->
+
+    <!-- [ Header ] start -->
+    <header class="navbar pcoded-header navbar-expand-lg header-blue navbar-light brand-primary">
+        <div class="m-header">
+            <a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
+            <a href="index.html" class="b-brand">
+                <div class="b-bg">
+                    <i class="feather icon-refresh-cw"></i>
+                </div>
+                <span class="b-title">Conversão de Dados - Mago4</span>
+            </a>
+        </div>
+        <a class="mobile-menu" id="mobile-header" href="#!">
+            <i class="feather icon-more-horizontal"></i>
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li>
+                    <a href="javascript:" class="full-screen" onclick="javascript:toggleFullScreen()">
+                        <i class="feather icon-maximize"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- [ Header ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+
+                    <!-- [ Breacrumble Header ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Converter Dados de Contas a Receber (em aberto)</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index.html"><i
+                                                    class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="#!">Conversão de Dados</a></li>
+                                        <li class="breadcrumb-item"><a href="#!">Contas a Receber</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ Breacrumble Header ] end -->
+
+                    <!-- [ Main Body ] start -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <div class="row-sm-12">
+                                <!-- [ User Information ] start -->
+                                <div class="col-sm-12">
+                                    <div class="alert alert-primary" role="alert">
+                                        <p>Este procedimento utiliza a Planilha de Importação Contas a Receber, caso não
+                                            tenha-a, baixe-a clicando
+                                            <a href="#!" target="_blank" class="alert-link">AQUI</a>
+                                        </p>
+                                        <p>Será gerado e baixado o arquivo <a target="_blank"
+                                                class="alert-link">MA_Rcvbls.sql</a> que conterá todos as
+                                            instruções para realizar a importação de dados de Contas a Receber.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- [ User Information ] end -->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="col-sm-4">
+                                                <script>
+                                                    // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                                    (function () {
+                                                        'use strict';
+                                                        window.addEventListener('load', function () {
+                                                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                                            var forms = document.getElementsByClassName('needs-validation');
+                                                            // Loop over them and prevent submission
+                                                            var validation = Array.prototype.filter.call(forms, function (form) {
+                                                                form.addEventListener('submit', function (event) {
+                                                                    if (form.checkValidity() === false) {
+                                                                        event.preventDefault();
+                                                                        event.stopPropagation();
+                                                                    }
+                                                                    form.classList.add('was-validated');
+                                                                }, false);
+                                                            });
+                                                        }, false);
+                                                    })();
+                                                </script>
+                                                <h5 class="m-b-10">Converter Dados de Contas a Receber</h5>
+
+                                                <div class="card"></div>
+
+                                                <form class="was-validated">
+
+                                                    <h6>Planilha Excel:</h6>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="input"
+                                                            accept=".xls,.xlsx" required>
+                                                        <label id="label_id" class="custom-file-label"
+                                                            for="input">Selecione
+                                                            a planilha...</label>
+                                                        <div class="invalid-feedback">Por favor, selecione o arquivo
+                                                            para
+                                                            upload
+                                                        </div>
+                                                        <small id="passwordHelpBlock"
+                                                            class="form-text text-muted">Selecione
+                                                            a Planilha de Importação de Fornecedores</small>
+                                                    </div>
+                                                    <div class="card"></div>
+                                                    <button class="btn btn-info" id="button">Converter Dados
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <i class="feather icon-play"> </i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ Main Body ] start -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
+
+    <!-- Jquery Slimscroll JS -->
+    <script type="text/javascript" src="assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Modernizr JS -->
+    <script type="text/javascript" src="assets/js/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="assets/js/modernizr/css-scrollbars.js"></script>
+    <script type="text/javascript" src="assets/js/sheetjs-master/dist/shim.min.js"></script>
+    <script type="text/javascript" src="assets/js/sheetjs-master/dist/xlsx.full.min.js"></script>
+
+    <!-- Required JS -->
+    <script src="assets/js/vendor-all.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/pcoded.min.js"></script>
+    <script src="assets/plugins/bootstrap-datetimepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/js/pages/ac-datepicker.js"></script>
+
+    <!-- Notification JS -->
+    <script type="text/javascript" src="assets/js/bootstrap-growl.min.js"></script>
+    <script type="text/javascript" src="assets/pages/notification/notification.js"></script>
+
+    <script type="text/javascript">
+
+        //Collapse menu
+        (function () {
+            if ($('#layout-sidenav').hasClass('sidenav-horizontal') || window.layoutHelpers.isSmallScreen()) {
+                return;
+            }
+            try {
+                window.layoutHelpers.setCollapsed(
+                    localStorage.getItem('layoutCollapsed') === 'true',
+                    false
+                );
+            } catch (e) { }
+        })();
+        $(function () {
+            // Initialize sidenav
+            $('#layout-sidenav').each(function () {
+                new SideNav(this, {
+                    orientation: $(this).hasClass('sidenav-horizontal') ? 'horizontal' : 'vertical'
+                });
+            });
+
+            // Initialize sidenav togglers
+            $('body').on('click', '.layout-sidenav-toggle', function (e) {
+                e.preventDefault();
+                window.layoutHelpers.toggleCollapsed();
+                if (!window.layoutHelpers.isSmallScreen()) {
+                    try {
+                        localStorage.setItem('layoutCollapsed', String(window.layoutHelpers.isCollapsed()));
+                    } catch (e) { }
+                }
+            });
+        });
+        $(document).ready(function () {
+            $("#pcoded").pcodedmenu({
+                themelayout: 'horizontal',
+                MenuTrigger: 'hover',
+                SubMenuTrigger: 'hover',
+            });
+        });
+
+    </script>
+
+    <!-- My Project Script -->
+    <script src="receivables.js"></script>
+</body>
+
+</html>

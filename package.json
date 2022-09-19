@@ -1,0 +1,19 @@
+{
+  "name": "zucconvert",
+  "version": "1.0.0",
+  "description": "Conversor de Dados em SQL",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "^8.5.5"
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "Luis Santos",
+  "license": "ISC",
+  "dependencies": {
+    "yarn": "^1.22.18"
+  }
+}
