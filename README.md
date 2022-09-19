@@ -1,12 +1,14 @@
-# Aplicação de Conversão de Dados de Entidades de Excel para Instruções SQL
-Aplicação de Conversão de Dados de Entidades de Excel apra Instruções SQL
+# Excel to SQL (Em desenvolvimento)
+Aplicação de Conversão de Dados de Entidades de Excel para Instruções SQL
 
 ![](conversao.png)
 
-### Tecnologias Utiliziadas:
+## Ferramentas Utilizadas neste projeto:
+
+### Tecnologias:
 - Javascript
 - CSS3
 - HTML5
-- Node.js
 - Electron.js
-- JQuery
+
+### Versão Atual 1.0.0:
